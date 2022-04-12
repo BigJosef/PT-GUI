@@ -8,7 +8,7 @@ from tkinter import *
 from nav_bar import *
 from subprocess import call, Popen, PIPE
 
-class AttackVectorTen(tk.Frame):
+class AttackVectorEleven(tk.Frame):
   
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
