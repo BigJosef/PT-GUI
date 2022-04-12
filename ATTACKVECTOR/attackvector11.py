@@ -18,9 +18,6 @@ class AttackVectorTen(tk.Frame):
         main_frame = tk.Frame(self)
         
         highlightFont = font.Font(family='Calibri', size=18)
-        
-        def load_terminal():
-            p1 = Popen("exo-open --launch TerminalEmulator", stdout=PIPE, universal_newlines=True, shell=True).stdout
             
         def change_to_Step1():
             text = (
@@ -33,8 +30,7 @@ class AttackVectorTen(tk.Frame):
                 "o Windows 7 and Kali Linux is configured to be in the same internal network.\n\n"
             
           )
-          step1frame = tk.Message(main_frame, text=text, fg='black', bg='white', font=('Calibri', 20), anchor='nw',
-                                    aspect=300)
+          step1frame = tk.Message(main_frame, text=text, fg='black', bg='white', font=('Calibri', 20), anchor='nw', aspect=300)
           step1frame.place(rely=0.2, relx=0.2, relheight=1, relwidth=1)
           
           def change_to_Step2():
@@ -49,16 +45,24 @@ class AttackVectorTen(tk.Frame):
                   "o Use the following commands to set RHOSTS and TARGETURI:\n"
                   "     set RHOSTS 192.168.68.117\n"
                   "     set TARGETURI /phpmyadmin4.8.1/\n\n"
-                  "o (IP address and folder name is just and example. Please modify accordingy)\n\n"
+                  "o (IP address and folder name is just and example. Please modify accordingly)\n\n"
                   "o Finally run the exploit using:\n"
                   "     run\n\n"
                   "o If successfull, a meterpreter session should be created and the RCE attack is complete.\n\n"
                 
           )
-          step2frame = tk.Message(main_frame, text=text, fg='black', bg='white', font=('Calibri', 20), anchor='nw',
-                                    aspect=300)
+          step2frame = tk.Message(main_frame, text=text, fg='black', bg='white', font=('Calibri', 20), anchor='nw', aspect=300)
           step2frame.place(rely=0.2, relx=0.2, relheight=1, relwidth=1)    
-                  
-                 
-               
-        
+          
+          # creates blue bar as canvas below nav bar housing label containing title of page
+          title_canvas = tk.Canvas(self, bg='#64C1DA', highlightthickness=0)
+          title_canvas.place(rely=0.08, relheight=0.12, relwidth=1)
+          title_label = tk.Label(self, text="phpMyAdmin 4.8.1 RCE", bg='#4D6C84', fg='white', anchor="c", font=framefont)
+          title_label.place(rely=0.08, relheight=0.12, relwidth=1)
+          
+          # buttons
+          step1button = tk.Button(main_frame, text="Step 1", font=highlightFont, command=change_to_Step1).place(rely=0.3, relx=0.02, relheight=0.05, relwidth=0.1)
+          step2button = tk.Button(main_frame, text="Step 2", font=highlightFont, command=change_to_Step1).place(rely=0.4, relx=0.02, relheight=0.05, relwidth=0.1)
+          
+          display_nav_bar(self, controller)
+          main_frame.pack(fill='both', expand=1)
