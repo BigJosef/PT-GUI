@@ -1,12 +1,12 @@
 import tkinter as tk  # python 3
 import os
-import PySimpleGUI as sg
+#import PySimpleGUI as sg
 from tkinter import font as tkfont, ttk  # python 3*
 from tkinter import font as tkfont
 from tkinter import font, messagebox
 from tkinter import *
 from nav_bar import *
-from subprocess import call, Popen, PIPE
+#from subprocess import call, Popen, PIPE
 
 class AttackVectorEleven(tk.Frame):
   
