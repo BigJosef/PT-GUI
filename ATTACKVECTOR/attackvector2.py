@@ -9,7 +9,7 @@ from tkinter import font as tkfont
 from tkinter import *
 from tkinter import font, messagebox
 import random, requests, os, sys
-# import PySimpleGUI as sg
+import PySimpleGUI as sg
 from nav_bar import *
 from subprocess import call, Popen, PIPE
 import os
